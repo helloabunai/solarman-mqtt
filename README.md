@@ -1,9 +1,8 @@
 # solarman-mqtt
-> WIP Fork/update to polling solarman APIs after the database split to separate global/chinese regions + API format change
-> Not yet implemented
->
-> 
 > Poll Solarman APIs and display data in HomeKit via MQTT broker
+> WIP Fork/update to polling solarman APIs after the database split to separate global/chinese regions + API format change
+> Implementation currently ongoing. Not ready for use.
+
 
 # Features
 - [x] Display battery power as a light sensor
@@ -19,8 +18,10 @@
 ![Low Battery Warning](./docs/images/4.PNG)
 
 # Disclaimer
-- This has only been tested on a Sunsynk inverter with a Solarman WiFi data logger. 
-- The docker images only targets the `linx/arm/v7` architecture (raspberry pi 3b)
+- This has only been tested on a SofarSolar inverter with a Solarman WiFi data logger.
+- See
+- The docker images has only been developed with linux/amd64 in mind.
+- The original arm docker target has not been tested at all.
 
 # Prerequisites
 - docker
@@ -33,4 +34,4 @@
 - Power values (usually watts) are modelled as a light sensor in HomeKit (in Lux). HomeKit does not support any sensor capable of displaying watts.
 
 # Setup
-See the example `docker-compose.yml` for details.
+See the example `docker-compose.yml` for details. You will need to contact solarman customer support to be granted API access for the new API.

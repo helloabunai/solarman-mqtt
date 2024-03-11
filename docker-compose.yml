@@ -7,10 +7,11 @@ services:
     environment:
       PYTHONUNBUFFERED: 1
       POLL_INTERVAL: 300
-      SOLARMAN_USERNAME: ""
-      SOLARMAN_PASSWORD: ""
-      SOLARMAN_DEVICE_ID: ""
-      SOLARMAN_SITE_ID: ""
+      SOLARMAN_ISSUER: "https://globalapi.solarmanpv.com" # change to api.solarmanpv.com for china
+      SOLARMAN_APPSECRET: "" # contact service@solarmanpv.com to be granted API access
+      SOLARMAN_APPID: ""  # contact service@solarmanpv.com to be granted API access
+      SOLARMAN_EMAIL: ""  # your web account details for globalhome.solarmanpv.com
+      SOLARMAN_PASSWORD: ""  # your web account details for globalhome.solarmanpv.com
       LOW_BATTERY_LEVEL: ""
       MQTT_BROKER_HOST: ""
       MQTT_BROKER_PORT: "" # optional (defaults to 1883)
