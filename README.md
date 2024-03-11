@@ -19,9 +19,8 @@
 
 # Disclaimer
 - This has only been tested on a SofarSolar inverter with a Solarman WiFi data logger.
-- See
-- The docker images has only been developed with linux/amd64 in mind.
-- The original arm docker target has not been tested at all.
+- The docker image has only been developed with linux/amd64 in mind.
+- The original armV7 docker target has not been tested at all.
 
 # Prerequisites
 - docker
