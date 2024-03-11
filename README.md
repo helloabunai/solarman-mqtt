@@ -1,4 +1,8 @@
 # solarman-mqtt
+> WIP Fork/update to polling solarman APIs after the database split to separate global/chinese regions + API format change
+> Not yet implemented
+>
+> 
 > Poll Solarman APIs and display data in HomeKit via MQTT broker
 
 # Features
