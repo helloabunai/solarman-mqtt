@@ -1,0 +1,9 @@
+SOLARMAN_ISSUER="https://globalapi.solarmanpv.com" # change to api.solarmanpv.com for china
+SOLARMAN_APPSECRET="" # contact service@solarmanpv.com to be granted API access
+SOLARMAN_APPID=""  # contact service@solarmanpv.com to be granted API access
+SOLARMAN_EMAIL=""  # your web account details for globalhome.solarmanpv.com
+SOLARMAN_PASSWORD="" # your web account details for globalhome.solarmanpv.com -> will be hashed with SHA256
+SOLARMAN_INVERTER="" # your inverter serial number. not the wifi logger.
+LOW_BATTERY_LEVEL=""
+MQTT_BROKER_HOST=""
+MQTT_BROKER_PORT="" # optional (defaults to 1883)

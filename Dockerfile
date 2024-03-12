@@ -4,7 +4,9 @@ RUN mkdir /app
 WORKDIR /app
 
 COPY requirements.txt .
-RUN pip install -U pip && pip install -r requirements.txt
+RUN apk --no-cache add curl && \
+    pip install -U pip && \
+    pip install -r requirements.txt
 
 COPY entrypoint.sh run.py ./
 COPY solarman_mqtt /app/solarman_mqtt

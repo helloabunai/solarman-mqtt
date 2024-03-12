@@ -29,7 +29,10 @@ class HomebridgeMQTT:
     TOPIC_ADD_SERVICE = "homebridge/to/add/service"
     TOPIC_SET_VALUE = "homebridge/to/set"
 
-    INVERTER_SUPPLY_NAME = "Inverter Supply"
+    INVERTER_SUPPLY_NAME = "Inverter Total Supply"
+    INVERTER_DC1_NAME = "Inverter DC1 Supply"
+    INVERTER_DC2_NAME = "Inverter DC2 Supply"
+    INVERTER_ALLDC_NAME = "Inverter Total DC Supply"
     INVERTER_BATTERY_POWER_NAME = "Inverter Battery Power"
     INVERTER_BATTERY_SOC_NAME = "Inverter Battery SOC"
 
@@ -62,7 +65,24 @@ class HomebridgeMQTT:
 
     def _register_accessories(self):
         self.register_accessory(
-            self.INVERTER_SUPPLY_NAME, self.INVERTER_SUPPLY_NAME, Service.CONTACT_SENSOR
+            self.INVERTER_SUPPLY_NAME,
+            self.INVERTER_SUPPLY_NAME,
+            Service.CONTACT_SENSOR
+        )
+        self.register_accessory(
+            self.INVERTER_DC1_NAME,
+            self.INVERTER_DC1_NAME,
+            Service.LIGHT_SENSOR
+        )
+        self.register_accessory(
+            self.INVERTER_DC2_NAME,
+            self.INVERTER_DC2_NAME,
+            Service.LIGHT_SENSOR
+        )
+        self.register_accessory(
+            self.INVERTER_ALLDC_NAME,
+            self.INVERTER_ALLDC_NAME,
+            Service.LIGHT_SENSOR
         )
         self.register_accessory(
             self.INVERTER_BATTERY_POWER_NAME,
@@ -101,6 +121,33 @@ class HomebridgeMQTT:
             self.INVERTER_BATTERY_POWER_NAME,
             Characteristic.CURRENT_AMBIENT_LIGHT_LEVEL,
             lux_level,
+        )
+        
+        # total DC power
+        total_dc_level = max(0.0001, state.inverter_power)
+        self._publish_value(
+            self.INVERTER_ALLDC_NAME,
+            self.INVERTER_ALLDC_NAME,
+            Characteristic.CURRENT_AMBIENT_LIGHT_LEVEL,
+            total_dc_level,
+        )
+
+        # DC1 power
+        dc1_level = max(0.0001, state.dc1_power)
+        self._publish_value(
+            self.INVERTER_DC1_NAME,
+            self.INVERTER_DC1_NAME,
+            Characteristic.CURRENT_AMBIENT_LIGHT_LEVEL,
+            dc1_level
+        )
+
+        # DC2 power
+        dc2_level = max(0.0001, state.dc2_power)
+        self._publish_value(
+            self.INVERTER_DC2_NAME,
+            self.INVERTER_DC2_NAME,
+            Characteristic.CURRENT_AMBIENT_LIGHT_LEVEL,
+            dc2_level
         )
 
         # battery soc

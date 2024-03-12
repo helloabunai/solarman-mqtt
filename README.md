@@ -3,7 +3,6 @@
 > WIP Fork/update to polling solarman APIs after the database split to separate global/chinese regions + API format change
 > Implementation currently ongoing. Not ready for use.
 
-
 # Features
 - [x] Display battery power as a light sensor
 - [x] Display "Inverter Supply" as a contact sensor (useful for checking if supply is from Inverter or Grid)
@@ -37,3 +36,4 @@ In my setup, I am utilising a [Mosquitto](https://github.com/eclipse/mosquitto) 
 
 # Setup
 See the example `docker-compose.yml` for details. You will need to contact solarman customer support to be granted API access for the new API.
+If working locally then please create a .env file in the root of the project (see .example-env).
